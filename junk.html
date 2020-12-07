@@ -67,13 +67,19 @@
     <script>
         
 
+        let pageXLocation = Math.floor(Math.random() * 320);
+        let pageYLocation = Math.floor(Math.random() * 320);
 
+        console.log(pageXLocation, pageYLocation);
 
+        $('#sixth').fadeIn(50).delay(5000).fadeOut(50);
 
-
-
-
-
+        $('html').click(function (event) {
+            $('#sixth').offset( {
+                left : event.pageXLocation,
+                top : event.pageYLocation
+            });
+        });
 
 
         // mini-game
@@ -143,9 +149,7 @@
             firstInterval = setInterval(moveHeader, interval);
             counter++;
             // h1 represents points
-            $('#box2').text(counter);
-            // h1 represents points
-            $('#firstHeader').text(counter) 
+            $('#firstHeader').text('Points: ' + counter) 
         });
 
 
