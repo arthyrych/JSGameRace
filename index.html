@@ -101,8 +101,9 @@
 
 
             // check the counter to stop moving
-            if (counter >= 3) {
+            if (counter >= 11) {
                 clearInterval(firstInterval);
+                $('#box2').text('You won!');
                 return;
             }
 
@@ -148,8 +149,10 @@
             interval /= 2;
             firstInterval = setInterval(moveHeader, interval);
             counter++;
-            // h1 represents points
-            $('#firstHeader').text('Points: ' + counter) 
+            if (counter <= 10) {
+                // h1 represents points
+                $('#firstHeader').text('Points: ' + counter); 
+            }
         });
 
 
