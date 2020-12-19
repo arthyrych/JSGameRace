@@ -14,9 +14,6 @@
         
         let dog = {
             name : 'Go',
-            age : 6,
-            isAwesome : true,
-            legs : 4,
             sound : 'Gaw-gaw!',
             speak : speak,
             bark : function () {
@@ -29,6 +26,18 @@
             speak : speak,
             sound : 'Mew-mew!'
         };
+
+        let pig = {
+            name : 'Charly',
+            speak : speak,
+            sound : 'Chr-chr-chr!'
+        };
+
+        let horse = {
+            name : 'Joo',
+            speak : speak,
+            sound : 'Igo-go-go!'
+        }
 
         function speak () {
             console.log(this.sound + ' Hello! My name is ' + this.name + '!');
