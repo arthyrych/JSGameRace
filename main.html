@@ -13,14 +13,26 @@
     <script>
         
         let dog = {
-            'name' : 'Go',
-            'age' : 6,
-            'isAwesome' : true,
-            'legs' : 4,
-            'bark' : function () {
-                console.log('Gaw-gaw! My name is ' + this.name)
+            name : 'Go',
+            age : 6,
+            isAwesome : true,
+            legs : 4,
+            sound : 'Gaw-gaw!',
+            speak : speak,
+            bark : function () {
+                console.log('Gaw-gaw! My name is ' + this.name + '!')
             }
-        }
+        };
+
+        let cat = {
+            name : 'Joy',
+            speak : speak,
+            sound : 'Mew-mew!'
+        };
+
+        function speak () {
+            console.log(this.sound + ' Hello! My name is ' + this.name + '!');
+        };
 
     </script>
 </body>
