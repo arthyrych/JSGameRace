@@ -7,11 +7,21 @@
 <body>
     
     <h1>Playground</h1>
+    <p class="test">Test text</p>
         
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
     <script>
         
+        
+
+        $('.test').hover(function () {
+            console.log('Entered <p>');
+        },
+        function () {
+            console.log('Exited <p>');
+        });
+
         let dog = {
             name : 'Go',
             sound : 'Gaw-gaw!',
