@@ -10,13 +10,14 @@
 
     <script>
 
-
+        // creating constructor
         function Car (x, y) {
             this.x = x;
             this.y = y;
         };
 
 
+        // creating a draw method for our objects
         Car.prototype.draw = function () {
 
             let carHtml = '<img src="../catch/img/car.png">';
@@ -33,13 +34,63 @@
         };
 
 
+        // moving object right
+        Car.prototype.moveRight = function () {
+
+            this.x += 5;
+
+            this.carElement.css({
+                left : this.x,
+                top : this.y
+            });
+        };
+
+
+        // moving object left
+        Car.prototype.moveLeft = function () {
+
+            this.x -= 5;
+
+            this.carElement.css({
+                left : this.x,
+                top : this.y
+            });
+        };
+
+
+        // moving object up
+        Car.prototype.moveUp = function () {
+
+            this.y -= 5;
+
+            this.carElement.css({
+                left : this.x,
+                top : this.y
+            });
+        };
+
+
+        // moving object down
+        Car.prototype.moveDown = function () {
+
+            this.y += 5;
+
+            this.carElement.css({
+                left : this.x,
+                top : this.y
+            });
+        };
+
+
         let tesla = new Car(20, 20);
         let nissan = new Car (100, 200);
         tesla.draw();
         nissan.draw();
 
-
-        
+        /* setInterval(() => {
+            nissan.moveRight();
+        }, 50);
+        */
 
     </script>
 </body>
