@@ -10,8 +10,11 @@
 
     <script>
 
-        let tesla = new Car(20, 20);
-        let nissan = new Car (100, 200);
+
+        function Car (x, y) {
+            this.x = x;
+            this.y = y;
+        };
 
 
         Car.prototype.draw = function () {
@@ -30,10 +33,13 @@
         };
 
 
-        function Car (x, y) {
-            this.x = x;
-            this.y = y;
-        };
+        let tesla = new Car(20, 20);
+        let nissan = new Car (100, 200);
+        tesla.draw();
+        nissan.draw();
+
+
+        
 
     </script>
 </body>
