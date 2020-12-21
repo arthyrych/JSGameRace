@@ -12,23 +12,21 @@
 
         let tesla = new Car(20, 20);
         let nissan = new Car (100, 200);
-        drawCar(tesla);
-        drawCar(nissan);
 
 
-        function drawCar (car) {
-            
+        Car.prototype.draw = function () {
+
             let carHtml = '<img src="../catch/img/car.png">';
 
-            let carElement = $(carHtml);
+            this.carElement = $(carHtml);
 
-            carElement.css({
+            this.carElement.css({
                 position : 'absolute',
-                left: car.x,
-                top : car.y
+                left: this.x,
+                top : this.y
             })
 
-            $('body').append(carElement);
+            $('body').append(this.carElement);
         };
 
 
