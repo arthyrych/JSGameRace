@@ -11,9 +11,10 @@
     <script>
 
         // creating constructor
-        function Car (x, y) {
+        function Car (x, y, speed) {
             this.x = x;
             this.y = y;
+            this.speed = speed;
             this.draw();
         };
 
@@ -38,7 +39,7 @@
         // moving object right
         Car.prototype.moveRight = function () {
 
-            this.x += 5;
+            this.x += this.speed;
 
             this.carElement.css({
                 left : this.x,
@@ -50,7 +51,7 @@
         // moving object left
         Car.prototype.moveLeft = function () {
 
-            this.x -= 5;
+            this.x -= this.speed;
 
             this.carElement.css({
                 left : this.x,
@@ -62,7 +63,7 @@
         // moving object up
         Car.prototype.moveUp = function () {
 
-            this.y -= 5;
+            this.y -= this.speed;
 
             this.carElement.css({
                 left : this.x,
@@ -74,7 +75,7 @@
         // moving object down
         Car.prototype.moveDown = function () {
 
-            this.y += 5;
+            this.y += this.speed;
 
             this.carElement.css({
                 left : this.x,
@@ -83,14 +84,19 @@
         };
 
 
-        let tesla = new Car(20, 20);
-        let nissan = new Car (100, 200);
-        //tesla.draw();
-        //nissan.draw();
+        let tesla = new Car(20, 20, 10);
+        let nissan = new Car (20, 200, 5);
 
-        /* setInterval(() => {
+        /*
+        
+        setInterval(() => {
+            tesla.moveRight();
+        }, 20);
+
+        setInterval(() => {
             nissan.moveRight();
-        }, 50);
+        }, 20);
+
         */
 
     </script>
