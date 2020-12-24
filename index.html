@@ -11,10 +11,10 @@
     <script>
 
         // creating constructor
-        function Car (x, y, speed) {
+        function Car (x, y) {
             this.x = x;
             this.y = y;
-            this.speed = speed;
+            this.speed = Math.floor(Math.random() * 4);
             this.draw();
         };
 
@@ -84,8 +84,8 @@
         };
 
 
-        let tesla = new Car(20, 20, 10);
-        let nissan = new Car (20, 200, 5);
+        let tesla = new Car(20, 20);
+        let nissan = new Car (20, 200);
 
         
         
