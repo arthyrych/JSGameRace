@@ -3,18 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Race</title>
+
+    <style>
+        .button {
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+        }
+        
+        .button1 {
+          background-color: white;
+          color: black;
+          border: 2px solid #4CAF50;
+        }
+        
+        .button1:hover {
+          background-color: #4CAF50;
+          color: white;
+        }
+        
+        .button2 {
+          background-color: white;
+          color: black;
+          border: 2px solid #008CBA;
+        }
+        
+        .button2:hover {
+          background-color: #008CBA;
+          color: white;
+        }
+        
+    </style>
+
 </head>
 <body>
-    
+            
+    <button class="button button1" onclick="startRace();">Start race!</button>
+    <button class="button button2">Stop race!</button>
+
+
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 
     <script>
+
+        // returns a random number between min and max (both included)
+        function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+        };
+
 
         // creating constructor
         function Car (x, y) {
             this.x = x;
             this.y = y;
-            this.speed = Math.floor(Math.random() * 4);
             this.draw();
         };
 
@@ -39,8 +87,7 @@
         // moving object right
         Car.prototype.moveRight = function () {
 
-            this.x += this.speed;
-
+            this.x += getRndInteger(0 ,5);
             this.carElement.css({
                 left : this.x,
                 top : this.y
@@ -51,7 +98,7 @@
         // moving object left
         Car.prototype.moveLeft = function () {
 
-            this.x -= this.speed;
+            this.x -= getRndInteger(0 ,5);
 
             this.carElement.css({
                 left : this.x,
@@ -63,7 +110,7 @@
         // moving object up
         Car.prototype.moveUp = function () {
 
-            this.y -= this.speed;
+            this.y -= getRndInteger(0 ,5);
 
             this.carElement.css({
                 left : this.x,
@@ -75,7 +122,7 @@
         // moving object down
         Car.prototype.moveDown = function () {
 
-            this.y += this.speed;
+            this.y += getRndInteger(0 ,5);
 
             this.carElement.css({
                 left : this.x,
@@ -84,20 +131,23 @@
         };
 
 
-        let tesla = new Car(20, 20);
-        let nissan = new Car (20, 200);
+        let firstCar = new Car(20, 100);
+        let secondCar = new Car (20, 200);
 
-        
-        
-        setInterval(() => {
-            tesla.moveRight();
+        function startRace () {
+
+            setInterval(() => {
+            firstCar.moveRight();
         }, 30);
 
         setInterval(() => {
-            nissan.moveRight();
+            secondCar.moveRight();
         }, 30);
 
+        };
         
+
+
 
     </script>
 </body>
