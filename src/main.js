@@ -103,11 +103,11 @@
 
             setInterval(() => {
             firstCar.moveRight();
-        }, 30);
+        }, 15);
 
         setInterval(() => {
             secondCar.moveRight();
-        }, 30);
+        }, 15);
 
         }
 
