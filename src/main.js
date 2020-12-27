@@ -80,8 +80,8 @@
 */
 
 
-    let firstCar = new Car(20, 100);
-    let secondCar = new Car (20, 200);
+    let firstCar = new Car(20, 150);
+    let secondCar = new Car (20, 250);
 
     // var to check if the race was started
     let raceIsStarted = false;
