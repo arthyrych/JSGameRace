@@ -73,9 +73,19 @@
     <button class="button button1" onclick="startRace();">Start race!</button>
     <button class="button button2" onclick="stopRace();">Stop race!</button>
 
-    <div class="vl"></div>
-    <div class="v2"></div>
+    <div class="v3"></div>
+    <div class="v4"></div>
 
+    <canvas id='canvas' width="1600" height="500"></canvas>
+
+    <script>
+        // drawing start and finish lines
+        let canvas = document.getElementById('canvas');
+        let ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'MediumSeaGreen';
+        ctx.fillRect(145, 0, 5, 200);
+        ctx.fillRect(1500, 0, 5, 200);
+    </script>
 
 </body>
 </html>
