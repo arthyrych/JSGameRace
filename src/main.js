@@ -34,13 +34,21 @@ Car.prototype.draw = function () {
 // moving object right
 Car.prototype.moveRight = function () {
 
-    // moving for a random number between inputs
-    this.x += getRndInteger(0, 5);
+    if (this.x >= 1400) {
 
-    this.carElement.css({
+        alert('The car' + this.name + 'won!');
+        location.reload();
+        return false;
+
+    } else {
+        // moving for a random number between inputs
+        this.x += getRndInteger(0, 5);
+
+        this.carElement.css({
         left : this.x,
         top : this.y
     });
+    }
 };
 
 
