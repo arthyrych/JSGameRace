@@ -5,9 +5,10 @@ function getRndInteger(min, max) {
 
 
 // creating constructor
-function Car (x, y) {
+function Car (x, y, id) {
     this.x = x;
     this.y = y;
+    this.id = id;
     this.draw();
 };
 
@@ -44,13 +45,14 @@ Car.prototype.moveRight = function () {
 
     if (this.x >= 1385) {
         stopRace();
+        alert('The car ' + this.id + ' has won!')
     }
 };
 
 
 // creating cars and setting their positions (x and y) on the page
-let firstCar = new Car(20, 130);
-let secondCar = new Car (20, 230);
+let firstCar = new Car(20, 130, 1);
+let secondCar = new Car (20, 230, 2);
 
 
 // var to check if the race was started
@@ -84,4 +86,6 @@ function startRace () {
 function stopRace () {
     clearInterval(firstCarInterval);
     clearInterval(secondCarInterval);
+    location.reload();
+    return false;
 };
