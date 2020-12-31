@@ -4,7 +4,7 @@ function getRndInteger(min, max) {
 };
 
 
-// creating constructor
+// creating a class
 function Car (x, y, id) {
     this.x = x;
     this.y = y;
@@ -13,7 +13,7 @@ function Car (x, y, id) {
 };
 
 
-// creating a draw method for our objects
+// creating a draw method
 Car.prototype.draw = function () {
 
     // taking location of the car img
@@ -32,7 +32,7 @@ Car.prototype.draw = function () {
 };
 
 
-// moving object right
+// creating a moving object right method
 Car.prototype.moveRight = function () {
 
     // moving for a random number between inputs
@@ -43,9 +43,11 @@ Car.prototype.moveRight = function () {
     top : this.y
     });
 
+
+    // stopping the race if any car crossed the finish
     if (this.x >= 1385) {
         stopRace();
-        alert('The car ' + this.id + ' has won!')
+        alert('The car ' + this.id + ' has won!');
     }
 };
 
@@ -82,7 +84,7 @@ function startRace () {
 };
     
 
-// stopping a race between cars
+// stopping a race between cars and reloading the page
 function stopRace () {
     clearInterval(firstCarInterval);
     clearInterval(secondCarInterval);
