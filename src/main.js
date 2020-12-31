@@ -41,10 +41,14 @@ Car.prototype.moveRight = function () {
     left : this.x,
     top : this.y
     });
+
+    if (this.x >= 1385) {
+        stopRace();
+    }
 };
 
 
-// creating cars and setting theirs positions x and y on the page
+// creating cars and setting their positions (x and y) on the page
 let firstCar = new Car(20, 130);
 let secondCar = new Car (20, 230);
 
@@ -65,11 +69,11 @@ function startRace () {
 
         raceIsStarted = true;
 
-        setInterval(() => {
+        firstCarInterval = setInterval(() => {
         firstCar.moveRight();
         }, 15);
 
-        setInterval(() => {
+        secondCarInterval = setInterval(() => {
         secondCar.moveRight();
         }, 15);
     }
@@ -78,6 +82,6 @@ function startRace () {
 
 // stopping a race between cars
 function stopRace () {
-    location.reload();
-    return false;
+    clearInterval(firstCarInterval);
+    clearInterval(secondCarInterval);
 };
