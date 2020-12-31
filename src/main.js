@@ -39,46 +39,6 @@
         });
     };
 
-/*      methods with other directions
-
-
-    // moving object left
-    Car.prototype.moveLeft = function () {
-
-        this.x -= getRndInteger(0, 5);
-
-        this.carElement.css({
-            left : this.x,
-            top : this.y
-        });
-    };
-
-
-    // moving object up
-    Car.prototype.moveUp = function () {
-
-        this.y -= getRndInteger(0, 5);
-
-        this.carElement.css({
-            left : this.x,
-            top : this.y
-        });
-    };
-
-
-    // moving object down
-    Car.prototype.moveDown = function () {
-
-        this.y += getRndInteger(0, 5);
-
-        this.carElement.css({
-            left : this.x,
-            top : this.y
-        });
-    };
-
-*/
-
 
     let firstCar = new Car(20, 130);
     let secondCar = new Car (20, 230);
