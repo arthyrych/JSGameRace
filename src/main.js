@@ -34,7 +34,7 @@ Car.prototype.draw = function () {
 // moving object right
 Car.prototype.moveRight = function () {
 
-    if (this.x >= 1400) {
+    if (this.x >= 1390) {
 
         alert('The car' + this.name + 'won!');
         location.reload();
