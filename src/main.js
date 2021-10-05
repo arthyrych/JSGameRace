@@ -17,7 +17,7 @@ function Car (x, y, id) {
 Car.prototype.draw = function () {
 
     // taking location of the car img
-    let carHtml = '<img src="../race/img/car.png">';
+    let carHtml = '<img src="../gameRace/img/car.png">';
 
     this.carElement = $(carHtml);
 
